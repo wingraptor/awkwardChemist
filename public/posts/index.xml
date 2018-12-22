@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hugo tranquilpeak theme</title>
+    <link>https://example.org/posts/</link>
+    <description>Recent content in Posts on Hugo tranquilpeak theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Keyword this</title>
+      <link>https://example.org/posts/thekeywordthis/</link>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/thekeywordthis/</guid>
+      <description>What is the keyword this? &amp;lsquo;this&amp;rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its execution context. Its value is determined at execution. The value of the keyword this can determined using four &amp;ldquo;rules&amp;rdquo;:
+ Global Rule Object/implicit Rule Explicit Rule Keyword new Rule  1. Global Context Occurs when the keyword &amp;lsquo;this&amp;rsquo; is outside of a declared object. The value of the keyword &amp;lsquo;this&amp;rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.</description>
+    </item>
+    
+    <item>
+      <title>Chunky Monkey Algorithm Challenge🐒</title>
+      <link>https://example.org/posts/chunkymonkey/</link>
+      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/chunkymonkey/</guid>
+      <description>Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge. In this post I&amp;rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.
+The Chunky Monkey algorithm is part of the FreeCodeCamp Front-End Web Development Certification.</description>
+    </item>
+    
+    <item>
+      <title>Web Development on My Chromebook</title>
+      <link>https://example.org/posts/developmentonchromebook/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/developmentonchromebook/</guid>
+      <description>I know what you&amp;rsquo;re thinking, a Chromebook&amp;hellip;.for web development. Surely a glorified Chrome browser is not suitable for creating web apps and websites. However, you&amp;rsquo;d be wrong .
+Surprise surprise, I&amp;rsquo;m a huge Chromebook fan, so much so that my primary device is the Samsung Chromebook Pro. From the time I used my first chromebook, the Acer C720, I fell in love with their super quick boot up times, hassle-free update handling, excellent battery life and minimalist approach to web browsing.</description>
+    </item>
+    
+    <item>
+      <title>Switching It Up With Switch Statements</title>
+      <link>https://example.org/posts/switchstatements/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/switchstatements/</guid>
+      <description>What are Switch Statements? This is another form of &amp;lsquo;conditional logic&amp;rsquo; that can be used in a javascript program (think If/else statements). Switch statements are useful when many conditions are being evaluated because they can be easier to type or read compared with using if/else statements.
+Syntax switch (expression) { case value1: //Statements executed when the //result of expression matches value1 break; case value2: //Statements executed when the //result of expression matches value2 break; .</description>
+    </item>
+    
+    <item>
+      <title>A Beginner&#39;s Introduction to Variables</title>
+      <link>https://example.org/posts/introductiontovariables/</link>
+      <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/introductiontovariables/</guid>
+      <description>In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, variables. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.
+What are Variables? Variables are simply containers for storing things called values. If you&amp;rsquo;re like me you&amp;rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.</description>
+    </item>
+    
+    <item>
+      <title>First Post</title>
+      <link>https://example.org/posts/firstpost/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/firstpost/</guid>
+      <description>Welcome to my blog. This is my very first post 🙌 and therefore I&amp;rsquo;m going to answer the who, what and why of this blog. To those of you who may be reading this far into the future, bear in mind that change is guaranteed and the answers to those three questions will change by the time you read this.
+Who am I? I&amp;rsquo;m Akono (this shouldn&amp;rsquo;t change) and at the time of writing I&amp;rsquo;m a beginner when it comes to web development&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Tranquilpeak 0.4.4-BETA</title>
+      <link>https://example.org/posts/welcome-to-the-new-tranquilpeak/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/welcome-to-the-new-tranquilpeak/</guid>
+      <description>&lt;p&gt;Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Who&#39;s using Tranquilpeak Hugo Theme</title>
+      <link>https://example.org/posts/who-is-using-tranquilpeak-hugo-theme/</link>
+      <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/who-is-using-tranquilpeak-hugo-theme/</guid>
+      <description>&lt;p&gt;Here you can find a list of the blogs that use Tranquilpeak theme, with different styles and customizations.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elements showcase</title>
+      <link>https://example.org/posts/elements-showcase/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/elements-showcase/</guid>
+      <description>&lt;p&gt;Check out how Tranquilpeak theme display well HTML elements (title, paragraph, blockquote, table and more..). It&amp;rsquo;s simple and elegant.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cover image showcase</title>
+      <link>https://example.org/posts/cover-image-showcase/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/cover-image-showcase/</guid>
+      <description>&lt;p&gt;Tranquilpeak integrate a unique &amp;ldquo;cover image&amp;rdquo; feature. Open this post to see how this feature sublimate your article.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>highlighted code showcase</title>
+      <link>https://example.org/posts/highlighted-code-showcase/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/highlighted-code-showcase/</guid>
+      <description>&lt;p&gt;Tranquilpeak Hugo theme have its own theme to highlight source code. It&amp;rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tags plugins showcase</title>
+      <link>https://example.org/posts/tags-plugins-showcase/</link>
+      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/tags-plugins-showcase/</guid>
+      <description>&lt;p&gt;This post is used to show how tag plugins are displayed. See &lt;a href=&#34;https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#tags&#34;&gt;docs&lt;/a&gt; for more info.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hidden social section showcase</title>
+      <link>https://example.org/posts/hidden-social-section-showcase/</link>
+      <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/hidden-social-section-showcase/</guid>
+      <description>&lt;p&gt;This post is used to show how a site looks if the social section is hidden.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hidden tag section showcase</title>
+      <link>https://example.org/posts/hidden-tag-section-showcase/</link>
+      <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/hidden-tag-section-showcase/</guid>
+      <description>&lt;p&gt;This post is used to show how a site looks if the tag section is hidden.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hidden pagination showcase</title>
+      <link>https://example.org/posts/hidden-pagination-showcase/</link>
+      <pubDate>Fri, 15 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/hidden-pagination-showcase/</guid>
+      <description>&lt;p&gt;This post is used to show how a site looks if the pagination is hidden.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Video integrations showcase</title>
+      <link>https://example.org/posts/video-integrations-showcase/</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/video-integrations-showcase/</guid>
+      <description>&lt;p&gt;Youtube and Vimeo videos are easily integrated thanks to tags plugins. Of course, you can add video other platforms like dailymotion.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中文測試</title>
+      <link>https://example.org/posts/chinese-test/</link>
+      <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/chinese-test/</guid>
+      <description>&lt;p&gt;This is a chinese test post to show you how chinese is displayed.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image gallery showcase</title>
+      <link>https://example.org/posts/image-gallery-showcase/</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/image-gallery-showcase/</guid>
+      <description>&lt;p&gt;And here is the image gallery!
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>日本語テスト</title>
+      <link>https://example.org/posts/japanese-test/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/posts/japanese-test/</guid>
+      <description>&lt;p&gt;This is a Japanese test post to show you how japanese is displayed.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

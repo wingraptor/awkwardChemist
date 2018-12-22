@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Firstname Lastname">
+<meta name="keywords" content="">
+<meta name="description" content="What is the keyword this? &lsquo;this&rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its execution context. Its value is determined at execution. The value of the keyword this can determined using four &ldquo;rules&rdquo;:
+ Global Rule Object/implicit Rule Explicit Rule Keyword new Rule  1. Global Context Occurs when the keyword &lsquo;this&rsquo; is outside of a declared object. The value of the keyword &lsquo;this&rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.">
+
+
+<meta property="og:description" content="What is the keyword this? &lsquo;this&rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its execution context. Its value is determined at execution. The value of the keyword this can determined using four &ldquo;rules&rdquo;:
+ Global Rule Object/implicit Rule Explicit Rule Keyword new Rule  1. Global Context Occurs when the keyword &lsquo;this&rsquo; is outside of a declared object. The value of the keyword &lsquo;this&rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Keyword this">
+<meta name="twitter:title" content="The Keyword this">
+<meta property="og:url" content="https://example.org/posts/thekeywordthis/">
+<meta property="twitter:url" content="https://example.org/posts/thekeywordthis/">
+<meta property="og:site_name" content="Hugo tranquilpeak theme">
+<meta property="og:description" content="What is the keyword this? &lsquo;this&rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its execution context. Its value is determined at execution. The value of the keyword this can determined using four &ldquo;rules&rdquo;:
+ Global Rule Object/implicit Rule Explicit Rule Keyword new Rule  1. Global Context Occurs when the keyword &lsquo;this&rsquo; is outside of a declared object. The value of the keyword &lsquo;this&rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.">
+<meta name="twitter:description" content="What is the keyword this? &lsquo;this&rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its execution context. Its value is determined at execution. The value of the keyword this can determined using four &ldquo;rules&rdquo;:
+ Global Rule Object/implicit Rule Explicit Rule Keyword new Rule  1. Global Context Occurs when the keyword &lsquo;this&rsquo; is outside of a declared object. The value of the keyword &lsquo;this&rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-10-13T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-10-13T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+
+
+    <title>The Keyword this</title>
+
+    <link rel="icon" href="https://example.org/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://example.org/posts/thekeywordthis/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://example.org/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://example.org/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://example.org/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://example.org/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Firstname Lastname</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      The Keyword this
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-10-13T00:00:00Z">
+        
+  October 13, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h2 id="what-is-the-keyword-this">What is the keyword this?</h2>
+
+<p>&lsquo;this&rsquo; is a reserved word in Javascript and is usually determined by how a function is called, i.e., its <strong>execution context</strong>.  Its value is determined at execution. The value of the keyword this can determined using four &ldquo;rules&rdquo;:</p>
+
+<ol>
+<li>Global Rule</li>
+<li>Object/implicit Rule</li>
+<li>Explicit Rule</li>
+<li>Keyword new Rule</li>
+</ol>
+
+<h3 id="1-global-context">1. Global Context</h3>
+
+<p>Occurs when the keyword &lsquo;this&rsquo; is outside of a <strong>declared object</strong>. The value of the keyword &lsquo;this&rsquo; therefore refers to the global object which is the window object for Javascript run in the browser.</p>
+
+<pre><code class="language-javascript">// In this case 'this' refers to the window object.
+console.log(this); // window
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>When variables are declared in the global scope, it is actually an object of the window (in the browser). It is attached to the window object.</p>
+
+<pre><code class="language-javascript">//BELOW PERSON IS DECLARED IN GLOBAL SCOPE
+var person = &quot;Mary&quot;;
+// person is actually attached to the window object and hence, see below:
+window.person === &quot;Mary&quot;
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>Even if the keyword this occurs in a function, but is still not declared in an object, it still value still refers to the global scope:</p>
+
+<pre><code class="language-javascript">function whatIsThis(){
+    return this;   // Returns window because this was never declared in an object.
+}
+whatIsThis() // window
+
+function variableInThis(){
+    //since the value of this is the window
+    // all we are doing here is creating a global variable
+    this.person = &quot;Mary&quot;; // This is bad practice, good practice is to declare global variables at the top of our code, and assign values later
+}
+console.log(person)// Mary
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h4 id="global-context-and-strict-mode">Global Context and Strict Mode</h4>
+
+<p>Strict mode assigns the value of this inside of a function but not declared in an object to undefined. Strict mode can be enabled by including <code>&quot;use strict&quot;</code> in our code. This prevents us from accidentally declaring global variables by referring to an undeclared &lsquo;this&rsquo; in a function which, without strict mode, will assign that variable a value in the global scope</p>
+
+<pre><code class="language-javascript">&quot;use strict&quot;
+console.log(this); // window
+function whatIsThis(){
+    return this;  
+}
+whatIsThis() // undefined
+
+function variableInThis(){
+    //since we are in strict mode this is undefined
+    // so what happens if we add a property on undefined
+    this.person = &quot;Mary&quot;;
+}
+variableInThis() //TypeError, can't set person on undefined.
+// This happens because in strict mode, 'this' is undefined when the keyword this is not declared in an object and is in a function.
+</code></pre>
+
+<p>&nbsp;</p>
+
+<hr />
+
+<h3 id="2-implicit-object-rule">2.  Implicit /Object Rule</h3>
+
+<p>When the keyword &lsquo;this&rsquo; is inside of a declared object, the value of the keyword this will always be the closest parent object.</p>
+
+<pre><code class="language-javascript">var person = {
+    firstName: &quot;Ellie&quot;,
+    sayHi: function(){
+        return &quot;Hi&quot; + this.firstname;
+    },
+    determineContext: function(){
+        return this === person;
+    }
+}
+person.sayHi() // &quot;Hi Ellie&quot;
+determineContext() // true
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h4 id="nested-object">Nested Object</h4>
+
+<pre><code class="language-javascript">var person = {
+    dog: {
+        sayHi: function(){
+            return &quot;Hello&quot; + this.firstname;
+        },
+        determineContext: function(){
+            return this === person;
+        },
+    }
+}
+person.dog.sayHi(); // Hello undefined
+person.dog.determineContext(); // false
+</code></pre>
+
+<p>&nbsp;</p>
+
+<hr />
+
+<h3 id="3-explicit-rule">3. Explicit Rule</h3>
+
+<p>We can explicitly state what the value of the keyword &lsquo;this&rsquo; will be by using call, apply or bind methods.</p>
+
+<p><strong>These three methods can only be used by functions and no other datatype.</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name of Method</th>
+<th>Parameters</th>
+<th>Invoke Immediately?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Call</td>
+<td>thisArg,a,b,c,d&hellip;</td>
+<td>YES</td>
+</tr>
+
+<tr>
+<td>Apply</td>
+<td>thisArg,[a,b,c,d&hellip;]</td>
+<td>YES</td>
+</tr>
+
+<tr>
+<td>Bind</td>
+<td>thisArg,a,b,c,d&hellip;</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>thisArg</strong> refers to the value that we want the keyword &lsquo;this&rsquo; to be; we explicitly state what the value of the keyword &lsquo;this&rsquo; should be in the method. a,b,c,d refer to the arguments that we are passing to the method for which we have explictly givent the keyword &lsquo;this&rsquo; the value of thisArg.
+&nbsp;</p>
+
+<p><strong>Using The Call Method</strong></p>
+
+<p>In the example below, we explicitly change the value of &lsquo;this&rsquo; in the sayHello function by calling the <strong>call</strong> method and passing &lsquo;person&rsquo; as an argument. Person refers to the person object and thus this is explicitly given the value person.</p>
+
+<pre><code class="language-javascript">var person = {
+    firstName: &quot;Ellie&quot;,
+    sayHi: function(){
+        return &quot;Hi&quot; + this.firstname;
+    },
+    determineContext: function(){
+        return this === person;
+    }
+    dog: {
+        sayHello: function(){
+            return &quot;Hello&quot; + this.firstname;
+        },
+        determineContext: function(){
+            return this === person;
+        },
+    }
+}
+person.dog.sayHello.call(person); // Hello Ellie
+person.dog.determineContext.call(person); // true
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Example: Using Call To DRY up Our Code</strong></p>
+
+<p>The code below works, however, we have duplicated our code. We can however, tidy this up using the call method.</p>
+
+<pre><code class="language-javascript">var colt = {
+  firstName: &quot;Colt&quot;,
+  sayHi: function(){
+    return &quot;Hi&quot; + this.firstName;
+  }
+}
+
+var elie = {
+  firstName: &quot;Ellie&quot;,
+  sayHi: function(){
+    return &quot;Hi&quot; + this.firstName;
+  }
+}
+
+colt.sayHi(); // Hi Colt
+ellie.sayHi(); // Hi Ellie
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Refactored Code</strong></p>
+
+<pre><code class="language-js">var colt = {
+  firstName: &quot;Colt&quot;,
+  sayHi: function(){
+    return &quot;Hi&quot; + this.firstName;
+  }
+}
+var ellie = {
+    firstName: &quot;Ellie:
+}
+
+colt.sayHi(); //Hi Colt
+colt.sayHi.call(ellie); // Hi Ellie
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Using The Apply Method</strong></p>
+
+<p>In the example below we can see that call and apply work in the same way, but apply takes the arguments as an apply of values.</p>
+
+<pre><code class="language-javascript">var colt = {
+    firstName: &quot;Colt&quot;,
+    sayHi: function(){
+        return &quot;Hi&quot; + this.firstName
+    }, 
+    addNumbers: function(a,b,c,d){
+        return this.firstName + &quot;just calculated&quot; + (a+b+c+d);
+    }
+}
+
+var ellie = {
+    firstName: &quot;Ellie&quot;
+}
+colt.addNumbers(1,2,3,4); // Colt just calculated 10
+colt.addNumbers.call(ellie,1,2,3,4);  //Ellie just calculated 10
+colt.addNumbers.apply(ellie, [1,2,3,4]) //Ellie just calculated 10
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Using The Bind Method</strong></p>
+
+<p>The bind method works just like the call method, but instead of calling the method right away, it returns a function definition with the keyword this set to the value of the first argument in the bind method.</p>
+
+<ol>
+<li>Bind is useful when we do not know all of the arguments that will be passed to the function; we do not want to invoke the function right away but want to return a new function with some parameters set. This is known as <strong>partial application</strong>.</li>
+</ol>
+
+<pre><code class="language-javascript">var colt = {
+    firstName: &quot;Colt&quot;,
+    sayHi: function(){
+        return &quot;Hi&quot; + this.firstName
+    },
+    addNumbers: function(a,b,c,d){
+        return this.firstName + &quot; just calculated &quot; + (a+b+c+d);
+    }
+}
+var ellie = {
+    firstName: &quot;Ellie&quot;
+}
+
+var ellieCalc = colt.addNumbers.bind(ellie, 1,2,3,4)
+ellieCalc(); // Ellie just calculated 10.
+
+//Alternatively, we can pass some of the arguments, 
+//create the function definition and then call the function by passing more parameters.
+
+var ellieCalc2 = colt.addNumbers.bind(ellie, 1,2); // 
+ellieCalc2(3,4,); // Ellie just calculated 10.
+//(1+2) were passed in as function was defined, 
+//(3+4) were passed in on function call.
+</code></pre>
+
+<p>&nbsp;</p>
+
+<ol>
+<li>Bind is also useful for asynchronous programming. The setTimeout method takes two arguments, the function that will be called and the time interval in ms-1. It is actually a method of the window object.</li>
+</ol>
+
+<p>In the code below, &lsquo;this&rsquo; actually refers to the window; because setTimeout is a method of the window and therefore the function is executed in the global context .</p>
+
+<pre><code class="language-js">var colt = {
+    firstName: &quot;Colt&quot;,
+    sayHi: function(){
+        setTimeout(function(){
+            console.log(&quot;Hi&quot; + this.firstName)
+        }, 1000)
+    }
+}
+
+colt.sayHi(); // Hi undefined ...after 1 second
+// (this.firstName == undefined because there is no firstName key in the window object)
+</code></pre>
+
+<p>We can use bind in order to solve this problem, such that &lsquo;this&rsquo; takes on the value of &lsquo;colt&rsquo;. In this case, the &lsquo;this&rsquo; argument of the bind method actually refers to the closest parent object, which is in this case &lsquo;colt&rsquo;. Bind method then binds the value of &lsquo;colt&rsquo; to the &lsquo;this&rsquo; inside of the setTimeout function. Bind allows us to give the correct context to the &lsquo;this&rsquo; keyword in the setTimeout function and allows it to be called after 1 second. If we were to use call or apply the function would execute immediately</p>
+
+<pre><code class="language-js">var colt = {
+    firstName: &quot;Colt&quot;,
+    sayHi: function(){
+        setTimeout(function(){
+            console.log(&quot;Hi&quot; + this.firstName)
+        }.bind(this), 1000);
+    }
+}
+colt.sayHi(); // Hi Colt...after 1 second
+</code></pre>
+
+<p>&nbsp;</p>
+
+<hr />
+
+<h3 id="4-the-new-keyword">4. The &lsquo;new&rsquo; keyword</h3>
+
+<p>The new keyword allows to create a new object. We can set the context of the &lsquo;this&rsquo; keyword by using the &lsquo;new&rsquo; keyword.</p>
+
+<p>&lsquo;new&rsquo; does several things:</p>
+
+<ul>
+<li>Creates an empty object</li>
+<li>Sets the keyword &lsquo;this&rsquo; to be that of an empty object</li>
+<li>Adds the line &lsquo;return this&rsquo; to the end of the function.</li>
+<li>Adds a property onto the empty object called &ldquo;__proto__&rdquo; (called dunder proto), which links the prototype property on the constructor function to the empty object.</li>
+</ul>
+
+<p>In the Person function, be default, &lsquo;this&rsquo; would refer to the global context and have a value of window, however, because we use the new keyword, we can set the context to the ellie variable and &lsquo;this&rsquo; takes on a value of ellie.</p>
+
+<pre><code class="language-javascript">function Person(firstname,lastname){
+    this.firstName = firstname
+    this.lastName = lastname
+}
+
+var ellie = new Person(&quot;ellie&quot;, &quot;Goulding&quot;);
+ellie.firstName //&quot;Ellie&quot;
+ellie.lastName // &quot;Goulding&quot;
+</code></pre>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/chunkymonkey/" data-tooltip="Chunky Monkey Algorithm Challenge🐒">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Firstname Lastname. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/chunkymonkey/" data-tooltip="Chunky Monkey Algorithm Challenge🐒">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/thekeywordthis/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.org%2Fposts%2Fthekeywordthis%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fexample.org%2Fposts%2Fthekeywordthis%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fexample.org%2Fposts%2Fthekeywordthis%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Firstname Lastname</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Your job title
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        France
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://example.org/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://example.org/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/example.org\/posts\/thekeywordthis\/';
+          
+            this.page.identifier = '\/posts\/thekeywordthis\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

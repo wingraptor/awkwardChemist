@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Firstname Lastname">
+<meta name="keywords" content="">
+<meta name="description" content="In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, variables. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.
+What are Variables? Variables are simply containers for storing things called values. If you&rsquo;re like me you&rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.">
+
+
+<meta property="og:description" content="In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, variables. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.
+What are Variables? Variables are simply containers for storing things called values. If you&rsquo;re like me you&rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Beginner&#39;s Introduction to Variables">
+<meta name="twitter:title" content="A Beginner&#39;s Introduction to Variables">
+<meta property="og:url" content="https://example.org/posts/introductiontovariables/">
+<meta property="twitter:url" content="https://example.org/posts/introductiontovariables/">
+<meta property="og:site_name" content="Hugo tranquilpeak theme">
+<meta property="og:description" content="In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, variables. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.
+What are Variables? Variables are simply containers for storing things called values. If you&rsquo;re like me you&rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.">
+<meta name="twitter:description" content="In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, variables. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.
+What are Variables? Variables are simply containers for storing things called values. If you&rsquo;re like me you&rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-03-31T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-03-31T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+
+
+    <title>A Beginner&#39;s Introduction to Variables</title>
+
+    <link rel="icon" href="https://example.org/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://example.org/posts/introductiontovariables/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://example.org/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://example.org/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://example.org/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://example.org/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Firstname Lastname</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      A Beginner&#39;s Introduction to Variables
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-31T00:00:00Z">
+        
+  March 31, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>In the spirit 👻of keeping things simple and at a beginner level I am going to attempt to explain one of the fundamental aspects of javascript and programming in general, <strong>variables</strong>. Variables was one of the first concepts that I encountered when I started to learn to code and is one of the easiest to grasp.</p>
+
+<h2 id="what-are-variables">What are Variables?</h2>
+
+<p><strong>Variables are simply containers for storing things called values</strong>. If you&rsquo;re like me you&rsquo;ve only ever encountered variables in Mathematics😱 and they are fundamentally the same in programming.</p>
+
+<p><strong>Both x and y are variables and store the values 10 and 20 + 2 respectively</strong>
+x = 10
+y = 20 + 2</p>
+
+<p>You can think of x and y as boxes with names x and y that store the number 10 and formula 20 + 2 respectively. This is useful because we can then refer to those variables by their names and use them elsewhere.</p>
+
+<p>x + y is the same thing as 10 + 20 +2</p>
+
+<p><em>Note that the above examples work fine in mathematics, however, as we will see, variables are assigned values in a specific way in javascript.</em></p>
+
+<h2 id="how-are-variables-created-in-javascript">How are Variables Created in Javascript?</h2>
+
+<p>Knowing what variables are is all good and well, but how do I create and use them in javascript. Creating a variable is known as <strong>declaring</strong> it in javascript. The first time you declare or better yet <strong>initialise</strong> a variable you use the following format:</p>
+
+<pre><code class="language-js">var someVariable = 25;
+</code></pre>
+
+<p><strong>var</strong> is a keyword which means..you guessed it variable, someVariable is the variable name or <strong>identifier</strong> and <strong>25</strong> is the number stored within someVariable. The = is the <strong>assignment operator</strong> and everything on the right of the assignment operator is evaluated first before that value is assigned to the variable on the left of the assignment operator.</p>
+
+<pre><code class="language-js">var someEquation = 22;
+someEquation = someEquation + 2; 
+someEquation = 24; // 22 (the previous value of someEquation) is added to 2 before
+// someEquation is given its new value 24. 
+</code></pre>
+
+<p>The semi-colon is analogous to a full-stop and lets the program know that you&rsquo;re finished declaring the variable.</p>
+
+<p>Note that the variable name can be anything you want provided that it follows these rules:</p>
+
+<ul>
+<li>Names can contain letters, digits, underscores, and dollar signs.</li>
+<li>Names must begin with a letter</li>
+<li>Names can also begin with $ and _ (but we will not use it in this tutorial)</li>
+<li><strong>Names are case sensitive (y and Y are different variables)</strong> - pay attention to this one as it will save you from lots of frustration.</li>
+<li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+</ul>
+
+<h2 id="how-to-use-variables">How to Use Variables?</h2>
+
+<p>Alright, so now that we know what variables are and how to declare them now you&rsquo;ll get a taste of how variables can be used.</p>
+
+<p><img src="https://media.giphy.com/media/l4Jz3a8jO92crUlWM/giphy.gif" alt="#saltbae" /></p>
+
+<pre><code class="language-js">var quick = 2 + 2;
+var maths = 1;
+quick - maths; // 4-1 evaluates to 3
+quick = 10; // This changes the value of the variable quick to 10.
+quick - maths; // This now evaluates to 9
+var fyah = &quot;man's&quot;;
+var inTheBooth = &quot; not hot&quot;;
+console.log(fyah + inTheBooth); // This logs &quot;man's not hot&quot; to the console. 
+</code></pre>
+
+<p>As you can see variables can be easily changed from one value to another 🔥🔥. Note that you only use the keyword  <code>var</code>  when you&rsquo;re  <em>creating</em>  a new variable, not when you&rsquo;re  <em>editing</em>  one.</p>
+
+<p>Hopefully you&rsquo;ve been able to learn a thing or two from this short introduction to variables. Feel free to give your feedback and suggestions and ask any questions that you may have, I&rsquo;ll try my best to answer them. 😬</p>
+
+<h2 id="references">References</h2>
+
+<p><a href="https://www.w3schools.com/js/js_variables.asp">https://www.w3schools.com/js/js_variables.asp</a>
+<a href="http://jsforcats.com/">http://jsforcats.com/</a></p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/switchstatements/" data-tooltip="Switching It Up With Switch Statements">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/firstpost/" data-tooltip="First Post">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Firstname Lastname. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/switchstatements/" data-tooltip="Switching It Up With Switch Statements">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/firstpost/" data-tooltip="First Post">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/introductiontovariables/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.org%2Fposts%2Fintroductiontovariables%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fexample.org%2Fposts%2Fintroductiontovariables%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fexample.org%2Fposts%2Fintroductiontovariables%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Firstname Lastname</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Your job title
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        France
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://example.org/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://example.org/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/example.org\/posts\/introductiontovariables\/';
+          
+            this.page.identifier = '\/posts\/introductiontovariables\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Firstname Lastname">
+<meta name="keywords" content="">
+<meta name="description" content="Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge. In this post I&rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.
+The Chunky Monkey algorithm is part of the FreeCodeCamp Front-End Web Development Certification.">
+
+
+<meta property="og:description" content="Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge. In this post I&rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.
+The Chunky Monkey algorithm is part of the FreeCodeCamp Front-End Web Development Certification.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chunky Monkey Algorithm Challenge🐒">
+<meta name="twitter:title" content="Chunky Monkey Algorithm Challenge🐒">
+<meta property="og:url" content="https://example.org/posts/chunkymonkey/">
+<meta property="twitter:url" content="https://example.org/posts/chunkymonkey/">
+<meta property="og:site_name" content="Hugo tranquilpeak theme">
+<meta property="og:description" content="Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge. In this post I&rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.
+The Chunky Monkey algorithm is part of the FreeCodeCamp Front-End Web Development Certification.">
+<meta name="twitter:description" content="Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge. In this post I&rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.
+The Chunky Monkey algorithm is part of the FreeCodeCamp Front-End Web Development Certification.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-05-15T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-05-15T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=640">
+
+
+    <title>Chunky Monkey Algorithm Challenge🐒</title>
+
+    <link rel="icon" href="https://example.org/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://example.org/posts/chunkymonkey/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://example.org/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://example.org/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://example.org/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://example.org/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Firstname Lastname</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://example.org/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Chunky Monkey Algorithm Challenge🐒
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-05-15T00:00:00Z">
+        
+  May 15, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>Today I was able to solve what in reality is a basic Javascript algorithm. For those of you who are more experienced with coding, this algorithm will be easy, but for me, it was a fun challenge.  In this post I&rsquo;ll attempt to explain the steps that I (eventually) took to solve it. So buckle up buckaroos and join me on a coding journey.</p>
+
+<p><img src="https://media.giphy.com/media/VNhrzGZDa8mZy/giphy.gif" alt="enter image description here" /></p>
+
+<p>The Chunky Monkey algorithm is part of the <a href="https://www.freecodecamp.org">FreeCodeCamp Front-End Web Development Certification</a>. It required me to write a function that split an array (first argument, <strong>arr</strong>) into groups with lengths equal to the second argument (<strong>size</strong>) and then return them as a two-dimensional array (<strong>newArr</strong>).</p>
+
+<p>See below for the expected outputs using various arguments:</p>
+
+<p><strong>Code Snippet 1</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size) {
+  return newArr;
+}
+chunkArrayInGroups([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;], 2); 
+// newArr = [[&quot;a&quot;, &quot;b&quot;], [&quot;c&quot;, &quot;d&quot;]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3); 
+// newArr = [[0, 1, 2], [3, 4, 5]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2); 
+// newArr = [[0, 1], [2, 3], [4, 5]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4); 
+// newArr = [[0, 1, 2, 3], [4, 5]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3); 
+// newArr = [[0, 1, 2], [3, 4, 5], [6]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4); 
+// newArr = [[0, 1, 2, 3], [4, 5, 6, 7], [8]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2); 
+// newArr = [[0, 1], [2, 3], [4, 5], [6, 7], [8]]
+</code></pre>
+
+<p>The first thing that I noticed is that there were two general classes of  outputs:</p>
+
+<ul>
+<li>The first three function calls all resulted in sub-arrays that each contained the same number of elements.</li>
+<li>The other four function calls resulted in sub-arrays that did not all have the same number of elements.</li>
+</ul>
+
+<p>The first sub-array of all function calls, however, all had lengths = <strong>size</strong>. These observations gave me an idea💡, maybe there was a relationship between the function arguments that I could exploit to construct the desired outputs. Other than datatype, which makes no difference, the only other obvious property of  <strong>arr</strong> that varied was its length (arr.length). Of course <strong>size</strong> also varied from example to example.</p>
+
+<p>In order to find that relationship I decided to write a simple function that divided <strong>arr.length</strong> by <strong>size</strong> and see what those outputs would yield:</p>
+
+<p><strong>Code Snippet 2</strong></p>
+
+<pre><code class="language-js">function test(arr, size){
+    console.log(arr.length / size);
+}
+test([&quot;a&quot;,  &quot;b&quot;,  &quot;c&quot;,  &quot;d&quot;],  2); //Output:  2
+test([0,  1,  2,  3,  4,  5],  3); //Output: 2
+test([0,  1,  2,  3,  4,  5],  2); //Output: 3
+test([0,  1,  2,  3,  4,  5],  4); //Output: 1.5
+test([0,  1,  2,  3,  4,  5,  6],  3); //Output: 2.33
+test([0,  1,  2,  3,  4,  5,  6,  7,  8],  4); //Output: 2.25
+test([0,  1,  2,  3,  4,  5,  6,  7,  8],  2); //Output: 4.5
+</code></pre>
+
+<p>Function calls 1-3 all yielded whole numbers where the output represented the number of sub-arrays present in <strong>newArr</strong> while <strong>size</strong> represented the number of elements in each sub-array when <strong>chunkArrayInGroups</strong> was called (See <strong>Code Snippet 3</strong>).</p>
+
+<p><strong>Code Snippet 3</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size) {
+  return newArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3); 
+// Output: [[0, 1, 2], [3, 4, 5]] // arr.length / size = 2
+// 2 sub-arrays each containing 3 (size) elements
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2); 
+//Output: [[0, 1], [2, 3], [4, 5]] // arr.length / size = 3
+// 3 sub-arrays each containing 2 (size) elements
+</code></pre>
+
+<p>Function calls 4-7 all yielded fractions. What I noticed is that whatever function I needed to create, would have to create as many sub-arrays with <strong>size</strong> number of elements in them, and then add the remaining element(s) to the final sub-array.  For function calls where arr.length / size = floating point, the final sub-array will contain a fraction of <strong>size</strong> number of elements (<strong>See Code Snippet 4</strong>)</p>
+
+<p><strong>Code Snippet 4</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size) {
+  return newArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4); 
+//Output: [[0, 1, 2, 3], [4, 5]] // arr.length / size= 1.5
+// 2 sub-arrays, one containing size number of elements.
+// The other containing (0.5 * size) elements
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3); 
+//Output: [[0, 1, 2], [3, 4, 5], [6]] // arr.length / size = 2.33
+// 3 sub-arrays, two containing size number of elements
+// Final array containing (0.33 * size) elements
+</code></pre>
+
+<p>With these clues in mind I then went about constructing and testing various functions.  I knew that I would have to iterate through <strong>arr</strong>  using a for loop. With each iteration of the loop I&rsquo;d need to extract elements from <strong>arr</strong> and then add the extracted elements to a new two-dimensional array. I could achieve this by using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice</a> methods. The number of iterations would determine the number of sub-arrays in <strong>newArr</strong>.  From my previous experimentation, I knew that the number of sub-arrays = (arr.length / size); at least for the first three function calls in <strong>Code Snippet 2</strong>.</p>
+
+<p><strong>Code Snippet 5</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size){
+    var newArr =  [];
+    for(var i =  0; i &lt; arr.length/size; i++){
+        newArr.push(arr.slice(?, ?));
+    }
+return newArr;
+}
+</code></pre>
+
+<p>As you can see above, I need to determine what would be valid arguments for the slice method. The first argument represents the index of the first element to be passed into the sub-array. The second argument represents the index of the element up to which is sliced into the sub-array; that element itself not included in the sub-array.</p>
+
+<p>I decided to reverse engineer functions call 1-3 from <strong>Code Snippet 1</strong> to determine how those arguments needed to vary to give me my desired result:</p>
+
+<p><strong>Code Snippet 6</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size){
+    var newArr =  [];
+    for(var i =  0; i &lt; arr.length/size; i++){
+        newArr.push(arr.slice(beginIndex,endIndex));
+    }
+return newArr;
+}
+
+//Function Call 1
+chunkArrayInGroups([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;], 2); // [[&quot;a&quot;, &quot;b&quot;], [&quot;c&quot;, &quot;d&quot;]]
+
+//Function Call 2
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3); // Output: [[0, 1, 2], [3, 4, 5]]
+
+//Function Call 3
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2); //Output: [[0, 1], [2, 3], [4, 5]]
+</code></pre>
+
+<h2 id="function-call-1"><strong>Function Call 1</strong></h2>
+
+<p><strong>size = 2</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Loop Iteration</th>
+<th>beginIndex</th>
+<th>endIndex</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="function-call-2"><strong>Function Call 2</strong></h2>
+
+<p><strong>size = 3</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Loop Iteration</th>
+<th>beginIndex</th>
+<th>endIndex</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>3</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="function-call-3"><strong>Function Call 3</strong></h2>
+
+<p><strong>size = 2</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Loop Iteration</th>
+<th>beginIndex</th>
+<th>endIndex</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>Two conclusions can be drawn from the tables above:</p>
+
+<ol>
+<li><p><strong>beginIndex</strong> and <strong>endindex</strong> increase by <strong>size</strong> during each for loop iteration.</p></li>
+
+<li><p><strong>endIndex</strong> = <strong>beginIndex</strong> + <strong>size</strong></p></li>
+</ol>
+
+<p>Using this information, I created a variable, <strong>count</strong> that increases by  <strong>size</strong> during each iteration of the for loop and acts as the beginning index. The <strong>endIndex</strong> therefore becomes <strong>count</strong> + <strong>size</strong> based on the relationship described in the conclusion above.</p>
+
+<p><strong>Code Snippet 7</strong></p>
+
+<pre><code class="language-js">function chunkArrayInGroups(arr, size){
+    var newArr =  [];
+    var count = 0;
+    for(var i =  0; i &lt; arr.length/size; i++){
+        newArr.push(arr.slice(count,count + size));
+        count = count + size;
+    }
+return newArr;
+}
+</code></pre>
+
+<p>The function above works!🎉🎉 You don&rsquo;t even have to take my word for it, give a go below🙏:</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@akonobrathwaite/ChunkyMonkey-Blog-Post?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p><strong>NB</strong>: You can comment out the function calls that you don&rsquo;t want to run.</p>
+
+<p>You may have noticed that this function also works for the function calls where the final outputted sub-array was not the same length as the preceding sub-arrays. This was actually a bit of a mystery for me until I broke down what the final iteration of the for loop was doing.</p>
+
+<p><strong>Function Call 5</strong>
+<strong>size = 3</strong></p>
+
+<p><strong>Code Snippet 8</strong></p>
+
+<pre><code class="language-js">chunkArrayInGroups([0,  1,  2,  3,  4,  5,  6],  3);
+//Output: [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6 ] ]
+</code></pre>
+
+<p>Final iteration of for loop for Function Call 5</p>
+
+<table>
+<thead>
+<tr>
+<th>Loop Iteration</th>
+<th>beginIndex</th>
+<th>endIndex</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+
+<p>This final iteration of the for loop extracts the element with index 6, up to, but not including the element with index 9. In this case <strong>arr</strong> does not contain an element with index 9. Because of this the slice method just extracts all remaining elements into the final sub-array. See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN webdocs</a> for more information.</p>
+
+<p>So that&rsquo;s it! We&rsquo;ve solved the Chunky Monkey Algorithm Challenge.🎆🎆 I hope that you&rsquo;ve enjoyed this journey and have learned a thing or two 😉</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/thekeywordthis/" data-tooltip="The Keyword this">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/developmentonchromebook/" data-tooltip="Web Development on My Chromebook">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Firstname Lastname. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/thekeywordthis/" data-tooltip="The Keyword this">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://example.org/posts/developmentonchromebook/" data-tooltip="Web Development on My Chromebook">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://example.org/posts/chunkymonkey/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.org%2Fposts%2Fchunkymonkey%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fexample.org%2Fposts%2Fchunkymonkey%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fexample.org%2Fposts%2Fchunkymonkey%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/d09dc2d7aa5c467519e8af89f7b3d94c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Firstname Lastname</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Your job title
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        France
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://example.org/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://example.org/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/example.org\/posts\/chunkymonkey\/';
+          
+            this.page.identifier = '\/posts\/chunkymonkey\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
